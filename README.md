@@ -2,18 +2,18 @@
 
 **Reverse Rush** is a reflex and direction-processing game built around an **Arduino Uno R3**, an **8×8 MAX7219 LED matrix**, a two-axis analog joystick and a buzzer.
 
-![Reverse Rush physical joystick and LED matrix game](images/gameplay.jpg)
+![Reverse Rush physical joystick and LED matrix game](/gameplay.jpg)
 
 *Actual Arduino/joystick/LED-matrix gameplay prototype.*
 
 ## Gameplay implemented in the supplied sketch
 
-1. The matrix displays a randomly chosen directional arrow.
-2. The player must move the joystick in the **opposite** direction and hold it long enough to register.
-3. A successful response adds a point; a failure costs one life.
-4. The game starts with **three lives**, displays success/failure icons, and shows the score at game over before restarting.
+1. Goal: React to each arrow with the special mapping — Left/Right = same, Up/Down = opposite.
+2. How to win: Score points by pushing the corresponding direction (and holding ~0.18 s within 0.9 s).
+3. When you lose: You lose a life for late/wrong/diagonal input; game over after 3 lives.
+4. Warning: Inputs after the time limit or diagonal/ambiguous moves are counted as wrong.
 
-> **Code note:** The initial comment in the source mentions left/right staying the same, but the implemented `oppositeOf()` function reverses **all four directions**. This README documents the current *implemented behavior*. Update the function if the intended rules are different.
+
 
 ## Components and wiring
 
@@ -34,7 +34,7 @@ Use a suitable MAX7219 module; verify the device's current draw, grounding and m
 ## Software
 
 1. Install Arduino IDE and the **LedControl** library.
-2. Open [`src/Reverse_Rush_final.ino`](src/Reverse_Rush_final.ino).
+2. Open [`/Reverse_Rush_final.ino`](/Reverse_Rush_final.ino).
 3. Select **Arduino Uno** and the serial port, then upload.
 4. Leave the joystick centered during startup while it calibrates its center position.
 5. React to arrows by moving the joystick in the *opposite* direction.
@@ -53,8 +53,8 @@ The matrix includes arrow icons, check/cross feedback, and score-rendering logic
 
 ## Repository structure
 
-- `src/Reverse_Rush_final.ino` — original Arduino sketch
-- `images/gameplay.jpg` — gameplay prototype photo
+- `/Reverse_Rush_final.ino` — original Arduino sketch
+- `/gameplay.jpg` — gameplay prototype photo
 - `README.md` and `.gitignore`
 
 ## Future improvements
