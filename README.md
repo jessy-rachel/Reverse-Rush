@@ -24,7 +24,7 @@
 | MAX7219 CS/LOAD | D10 |
 | Joystick X-axis | A0 |
 | Joystick Y-axis | A1 |
-| Joystick push-button | D2 (configured with pull-up; not presently part of gameplay) |
+| Joystick push-button | D2 |
 | Buzzer | D8 |
 | MAX7219 power | Appropriate 5V and GND connections |
 | Joystick power | 5V and GND |
